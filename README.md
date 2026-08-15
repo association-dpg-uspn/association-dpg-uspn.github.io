@@ -37,7 +37,7 @@ Réglage requis une seule fois : dans les Settings du dépôt GitHub → Pages �
 
 ## URL du site
 
-Ce dépôt est actuellement nommé `website`. Pour obtenir une URL propre à la racine du domaine GitHub Pages de l'organisation (`https://association-dpg-uspn.github.io/` au lieu de `.../website/`), renommez ce dépôt en `association-dpg-uspn.github.io` dans les Settings GitHub — aucune configuration Eleventy supplémentaire n'est nécessaire (pas de `pathPrefix`).
+Le dépôt est nommé `association-dpg-uspn.github.io`, ce qui donne une URL propre à la racine : `https://association-dpg-uspn.github.io/` (aucun `pathPrefix` Eleventy nécessaire).
 
 ## Charte graphique
 
