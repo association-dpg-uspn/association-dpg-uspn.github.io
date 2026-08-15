@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Ressources
+---
+<article class="content">
+  <h1>Ressources</h1>
+  {%- if collections.resources.length %}
+  <ul class="card-list">
+    {%- for resource in collections.resources %}
+    <li class="card">
+      <p class="card__meta">{{ resource.data.category }}</p>
+      <h3>{{ resource.data.title }}</h3>
+      {%- if resource.data.description %}
+      <p>{{ resource.data.description }}</p>
+      {%- endif %}
+      {%- if resource.data.file %}
+      <p><a href="{{ resource.data.file }}">Télécharger →</a></p>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p>Aucune ressource pour le moment.</p>
+  {%- endif %}
+</article>

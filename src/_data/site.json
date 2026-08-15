@@ -1,0 +1,13 @@
+{
+  "title": "Association DPG USPN",
+  "tagline": "L'association des étudiants du Master Droit Privé Général de l'USPN",
+  "associationName": "Association DPG USPN",
+  "email": "contact@dpg-uspn.fr",
+  "nav": [
+    { "label": "Accueil", "url": "/" },
+    { "label": "Présentation", "url": "/presentation/" },
+    { "label": "Événements", "url": "/evenements/" },
+    { "label": "Ressources", "url": "/ressources/" },
+    { "label": "Contact", "url": "/contact/" }
+  ]
+}

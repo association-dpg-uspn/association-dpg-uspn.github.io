@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: Événements
+---
+<article class="content">
+  <h1>Événements</h1>
+  {%- if collections.events.length %}
+  <ul class="card-list">
+    {%- for event in collections.events %}
+    <li class="card">
+      <p class="card__meta">{{ event.data.date | dateFr }}</p>
+      <h3>{{ event.data.title }}</h3>
+      <p>{{ event.data.description }}</p>
+      {%- if event.data.link %}
+      <p><a href="{{ event.data.link }}">En savoir plus →</a></p>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p>Aucun événement pour le moment.</p>
+  {%- endif %}
+</article>

@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+title: Accueil
+---
+<section class="hero">
+  <img class="hero__logo" src="/assets/images/logo.jpg" alt="{{ site.associationName }}">
+  <h1>{{ site.associationName }}</h1>
+  <p class="hero__tagline">{{ site.tagline }}</p>
+  <div class="hero__actions">
+    <a class="btn btn--primary" href="/presentation/">Découvrir l'association</a>
+    <a class="btn btn--secondary" href="/contact/">Nous rejoindre</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Prochainement</h2>
+  {%- if collections.events.length %}
+  <ul class="card-list">
+    {%- for event in collections.events %}
+    {%- if loop.index <= 3 %}
+    <li class="card">
+      <p class="card__meta">{{ event.data.date | dateFr }}</p>
+      <h3>{{ event.data.title }}</h3>
+      <p>{{ event.data.description }}</p>
+    </li>
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+  <p><a href="/evenements/">Voir tous les événements →</a></p>
+  {%- else %}
+  <p>Aucun événement pour le moment.</p>
+  {%- endif %}
+</section>

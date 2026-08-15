@@ -1,2 +1,49 @@
-# website
-Site web de l'association dpg uspn
+# Association DPG USPN
+
+Site web de l'association des étudiants du Master 2 Droit Privé Général (USPN).
+
+## Stack
+
+- [Eleventy](https://www.11ty.dev/) — générateur de site statique
+- [GitHub Pages](https://pages.github.com/) — hébergement gratuit, déploiement automatique via GitHub Actions
+- [Pages CMS](https://pagescms.org/) — édition de contenu via une interface web (aucune ligne de code nécessaire), les modifications sont commitées directement dans ce dépôt
+
+## Développement local
+
+```bash
+npm install
+npm run dev
+```
+
+Le site est servi sur `http://localhost:8080`.
+
+```bash
+npm run build
+```
+
+Génère le site dans `_site/`.
+
+## Éditer le contenu
+
+Rendez-vous sur [pagescms.org](https://app.pagescms.org/), connectez-vous avec GitHub, et sélectionnez ce dépôt. Toute personne devant éditer le contenu (bureau de l'association) doit d'abord être ajoutée comme collaborateur·rice du dépôt GitHub (Settings → Collaborators, rôle "Write" minimum), accepter l'invitation, puis se connecter à Pages CMS.
+
+Les sections éditables : Accueil, Présentation (+ Bureau), Événements, Ressources, Contact.
+
+## Déploiement
+
+Chaque `push` sur `main` (y compris les commits effectués par Pages CMS) déclenche automatiquement le workflow `.github/workflows/deploy.yml`, qui build le site et le publie sur GitHub Pages.
+
+Réglage requis une seule fois : dans les Settings du dépôt GitHub → Pages → "Build and deployment" → Source = **GitHub Actions**.
+
+## URL du site
+
+Ce dépôt est actuellement nommé `website`. Pour obtenir une URL propre à la racine du domaine GitHub Pages de l'organisation (`https://association-dpg-uspn.github.io/` au lieu de `.../website/`), renommez ce dépôt en `association-dpg-uspn.github.io` dans les Settings GitHub — aucune configuration Eleventy supplémentaire n'est nécessaire (pas de `pathPrefix`).
+
+## Charte graphique
+
+- Couleur primaire : `#600824` (bordeaux)
+- Couleur secondaire : `#C7B7A3` (beige)
+- Police des titres : Playfair Display (proche du Didot de la charte)
+- Police du texte courant : Georgia / Times New Roman
+
+Logo : `src/assets/images/logo.jpg`.

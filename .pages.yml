@@ -1,0 +1,83 @@
+media:
+  - name: images
+    input: src/assets/images
+    output: /assets/images
+  - name: documents
+    input: src/assets/documents
+    output: /assets/documents
+
+content:
+  - name: home
+    label: "Accueil"
+    type: file
+    path: src/index.njk
+    fields:
+      - { name: title, label: "Titre (onglet navigateur)", type: string }
+
+  - name: presentation
+    label: "Présentation"
+    type: file
+    path: src/presentation.md
+    fields:
+      - { name: title, label: "Titre", type: string }
+      - { name: showBureau, label: "Afficher le bureau", type: boolean, default: true }
+      - { name: body, label: "Texte de présentation", type: rich-text }
+
+  - name: contact
+    label: "Contact / Adhésion"
+    type: file
+    path: src/contact.md
+    fields:
+      - { name: title, label: "Titre", type: string }
+      - { name: body, label: "Texte", type: rich-text }
+
+  - name: events
+    label: "Événements"
+    type: collection
+    path: src/events
+    filter:
+      path: "events.json"
+      exclude: true
+    view:
+      fields: [title, date]
+      sort: date
+      sortDirection: desc
+    fields:
+      - { name: title, label: "Titre", type: string }
+      - { name: date, label: "Date", type: date }
+      - { name: description, label: "Description", type: text }
+      - { name: link, label: "Lien (inscription, etc.)", type: string, required: false }
+
+  - name: resources
+    label: "Ressources"
+    type: collection
+    path: src/resources
+    filter:
+      path: "resources.json"
+      exclude: true
+    view:
+      fields: [title, category]
+    fields:
+      - { name: title, label: "Titre", type: string }
+      - name: category
+        label: "Catégorie"
+        type: select
+        options: ["Cours", "Fiches", "Annales", "Autre"]
+      - { name: description, label: "Description", type: text, required: false }
+      - { name: file, label: "Fichier", type: file, media: documents }
+
+  - name: bureau
+    label: "Bureau"
+    type: collection
+    path: src/bureau
+    filter:
+      path: "bureau.json"
+      exclude: true
+    view:
+      fields: [name, role]
+      sort: order
+    fields:
+      - { name: name, label: "Nom", type: string }
+      - { name: role, label: "Rôle", type: string }
+      - { name: order, label: "Ordre d'affichage", type: number, default: 1 }
+      - { name: photo, label: "Photo", type: image, media: images, required: false }

@@ -1,0 +1,271 @@
+:root {
+  --color-primary: #600824;
+  --color-primary-dark: #45061a;
+  --color-secondary: #c7b7a3;
+  --color-bg: #fdfbf9;
+  --color-surface: #ffffff;
+  --color-text: #241014;
+  --color-text-muted: #6b5b5f;
+  --color-border: #e6ddd3;
+
+  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: Georgia, "Times New Roman", Times, serif;
+
+  --max-width: 68rem;
+  --radius: 0.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.site-header {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.brand__logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.brand__name {
+  font-size: 1.05rem;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle__label {
+  display: none;
+  margin-left: auto;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+}
+
+.site-nav a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.15rem;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  border-bottom-color: var(--color-secondary);
+}
+
+@media (max-width: 40rem) {
+  .site-header__inner {
+    position: relative;
+  }
+
+  .nav-toggle__label {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 0;
+    margin-left: 0;
+  }
+
+  .nav-toggle:checked ~ .site-nav {
+    display: block;
+  }
+}
+
+/* Main content */
+.page {
+  padding: 2.5rem 1.25rem;
+  min-height: 60vh;
+}
+
+.content > :first-child {
+  margin-top: 0;
+}
+
+/* Hero (home) */
+.hero {
+  text-align: center;
+  padding: 2rem 0 3rem;
+}
+
+.hero__logo {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.hero h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.hero__tagline {
+  color: var(--color-text-muted);
+  max-width: 34rem;
+  margin: 0 auto 1.75rem;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid var(--color-primary);
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+/* Sections & cards */
+.section {
+  margin-top: 2.5rem;
+}
+
+.card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.card h3 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.card__meta {
+  margin: 0;
+  color: var(--color-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.card--member {
+  text-align: center;
+}
+
+.card__photo {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.75rem;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-primary-dark);
+  color: var(--color-secondary);
+  margin-top: 3rem;
+}
+
+.site-footer__inner {
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
