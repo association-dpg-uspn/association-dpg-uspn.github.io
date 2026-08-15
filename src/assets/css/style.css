@@ -153,6 +153,30 @@ h1, h2, h3 {
   margin-top: 0;
 }
 
+.socials {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.socials__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+}
+
+.socials__link:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 /* Hero (home) */
 .hero {
   text-align: center;

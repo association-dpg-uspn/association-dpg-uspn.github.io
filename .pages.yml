@@ -38,6 +38,8 @@ content:
     path: src/contact.md
     fields:
       - { name: title, label: "Titre", type: string }
+      - { name: instagram, label: "Lien Instagram", type: string, required: false }
+      - { name: linkedin, label: "Lien LinkedIn", type: string, required: false }
       - { name: body, label: "Texte", type: rich-text }
 
   - name: events
