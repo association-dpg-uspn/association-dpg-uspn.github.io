@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 ---
+{% import "macros.njk" as m %}
 <article class="content">
   <h1>{{ title }}</h1>
   {{ content | safe }}
@@ -27,7 +28,7 @@ layout: layouts/base.njk
 
 {%- if showBureau and collections.bureau.length %}
 <section class="section">
-  <h2>Le bureau</h2>
+  {{ m.chapterMark("Le bureau") }}
   <ul class="card-list card-list--bureau">
     {%- for member in collections.bureau %}
     <li class="card card--member">
@@ -44,7 +45,7 @@ layout: layouts/base.njk
 
 {%- if showPartners and collections.partners.length %}
 <section class="section">
-  <h2>Nos partenaires</h2>
+  {{ m.chapterMark("Nos partenaires") }}
   <ul class="card-list card-list--partners">
     {%- for partner in collections.partners %}
     <li class="card card--partner">
