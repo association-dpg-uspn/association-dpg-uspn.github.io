@@ -27,7 +27,7 @@ Génère le site dans `_site/`.
 
 Rendez-vous sur [pagescms.org](https://app.pagescms.org/), connectez-vous avec GitHub, et sélectionnez ce dépôt. Toute personne devant éditer le contenu (bureau de l'association) doit d'abord être ajoutée comme collaborateur·rice du dépôt GitHub (Settings → Collaborators, rôle "Write" minimum), accepter l'invitation, puis se connecter à Pages CMS.
 
-Les sections éditables : Accueil, Présentation (+ Bureau), Événements, Chroniques, Partenariat (+ Partenaires), Boutique, Contact.
+Les sections éditables : Accueil, Présentation (+ Bureau), Événements, Chroniques, Partenariats (+ Partenaires), Boutique, Contact.
 
 ### Boutique / paiement
 

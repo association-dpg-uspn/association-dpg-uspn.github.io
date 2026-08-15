@@ -23,10 +23,10 @@ content:
       - { name: showBureau, label: "Afficher le bureau", type: boolean, default: true }
       - { name: body, label: "Texte de présentation", type: rich-text }
 
-  - name: partenariat
-    label: "Partenariat"
+  - name: partenariats
+    label: "Partenariats"
     type: file
-    path: src/partenariat.md
+    path: src/partenariats.md
     fields:
       - { name: title, label: "Titre", type: string }
       - { name: showPartners, label: "Afficher les partenaires", type: boolean, default: true }
