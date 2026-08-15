@@ -27,7 +27,11 @@ Génère le site dans `_site/`.
 
 Rendez-vous sur [pagescms.org](https://app.pagescms.org/), connectez-vous avec GitHub, et sélectionnez ce dépôt. Toute personne devant éditer le contenu (bureau de l'association) doit d'abord être ajoutée comme collaborateur·rice du dépôt GitHub (Settings → Collaborators, rôle "Write" minimum), accepter l'invitation, puis se connecter à Pages CMS.
 
-Les sections éditables : Accueil, Présentation (+ Bureau), Événements, Ressources, Contact.
+Les sections éditables : Accueil, Présentation (+ Bureau), Événements, Chroniques, Partenariat (+ Partenaires), Boutique, Contact.
+
+### Boutique / paiement
+
+Le site est statique : il n'y a pas de panier ni de paiement géré par le site lui-même. Chaque produit a un champ "Lien de paiement Stripe" — créez un [Payment Link](https://dashboard.stripe.com/payment-links) dans le dashboard Stripe pour chaque produit et collez son URL dans ce champ via Pages CMS. Le bouton "Acheter" du site renvoie directement vers cette page de paiement Stripe hébergée. Aucun backend/serveur supplémentaire n'est nécessaire.
 
 ## Déploiement
 

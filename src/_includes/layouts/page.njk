@@ -22,3 +22,23 @@ layout: layouts/base.njk
   </ul>
 </section>
 {%- endif %}
+
+{%- if showPartners and collections.partners.length %}
+<section class="section">
+  <h2>Nos partenaires</h2>
+  <ul class="card-list card-list--partners">
+    {%- for partner in collections.partners %}
+    <li class="card card--partner">
+      {%- if partner.data.logo %}
+      <img class="card__logo" src="{{ partner.data.logo }}" alt="{{ partner.data.name }}">
+      {%- endif %}
+      {%- if partner.data.link %}
+      <h3><a href="{{ partner.data.link }}">{{ partner.data.name }}</a></h3>
+      {%- else %}
+      <h3>{{ partner.data.name }}</h3>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}

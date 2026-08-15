@@ -23,6 +23,15 @@ content:
       - { name: showBureau, label: "Afficher le bureau", type: boolean, default: true }
       - { name: body, label: "Texte de présentation", type: rich-text }
 
+  - name: partenariat
+    label: "Partenariat"
+    type: file
+    path: src/partenariat.md
+    fields:
+      - { name: title, label: "Titre", type: string }
+      - { name: showPartners, label: "Afficher les partenaires", type: boolean, default: true }
+      - { name: body, label: "Texte de présentation", type: rich-text }
+
   - name: contact
     label: "Contact / Adhésion"
     type: file
@@ -48,12 +57,12 @@ content:
       - { name: description, label: "Description", type: text }
       - { name: link, label: "Lien (inscription, etc.)", type: string, required: false }
 
-  - name: resources
-    label: "Ressources"
+  - name: chroniques
+    label: "Chroniques"
     type: collection
-    path: src/resources
+    path: src/chroniques
     filter:
-      path: "resources.json"
+      path: "chroniques.json"
       exclude: true
     view:
       fields: [title, category]
@@ -81,3 +90,41 @@ content:
       - { name: role, label: "Rôle", type: string }
       - { name: order, label: "Ordre d'affichage", type: number, default: 1 }
       - { name: photo, label: "Photo", type: image, media: images, required: false }
+
+  - name: partenaires
+    label: "Partenaires"
+    type: collection
+    path: src/partenaires
+    filter:
+      path: "partenaires.json"
+      exclude: true
+    view:
+      fields: [name]
+      sort: order
+    fields:
+      - { name: name, label: "Nom", type: string }
+      - { name: logo, label: "Logo", type: image, media: images, required: false }
+      - { name: link, label: "Lien (site web)", type: string, required: false }
+      - { name: order, label: "Ordre d'affichage", type: number, default: 1 }
+
+  - name: boutique
+    label: "Boutique"
+    type: collection
+    path: src/boutique
+    filter:
+      path: "boutique.json"
+      exclude: true
+    view:
+      fields: [title, price]
+      sort: order
+    fields:
+      - { name: title, label: "Nom du produit", type: string }
+      - { name: description, label: "Description", type: text, required: false }
+      - { name: price, label: "Prix (ex: 25 €)", type: string }
+      - { name: photo, label: "Photo", type: image, media: images, required: false }
+      - name: paymentLink
+        label: "Lien de paiement Stripe"
+        type: string
+        required: false
+        description: "Collez ici le lien créé dans Stripe (Payment Links) pour ce produit."
+      - { name: order, label: "Ordre d'affichage", type: number, default: 1 }

@@ -7,7 +7,9 @@
     { "label": "Accueil", "url": "/" },
     { "label": "Présentation", "url": "/presentation/" },
     { "label": "Événements", "url": "/evenements/" },
-    { "label": "Ressources", "url": "/ressources/" },
+    { "label": "Chroniques", "url": "/chroniques/" },
+    { "label": "Partenariat", "url": "/partenariat/" },
+    { "label": "Boutique", "url": "/boutique/" },
     { "label": "Contact", "url": "/contact/" }
   ]
 }

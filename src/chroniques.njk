@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Chroniques
+---
+<article class="content">
+  <h1>Chroniques</h1>
+  {%- if collections.chroniques.length %}
+  <ul class="card-list">
+    {%- for chronique in collections.chroniques %}
+    <li class="card">
+      <p class="card__meta">{{ chronique.data.category }}</p>
+      <h3>{{ chronique.data.title }}</h3>
+      {%- if chronique.data.description %}
+      <p>{{ chronique.data.description }}</p>
+      {%- endif %}
+      {%- if chronique.data.file %}
+      <p><a href="{{ chronique.data.file }}">Télécharger →</a></p>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p>Aucune chronique pour le moment.</p>
+  {%- endif %}
+</article>

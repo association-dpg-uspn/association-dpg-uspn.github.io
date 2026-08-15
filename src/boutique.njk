@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+title: Boutique
+---
+<article class="content">
+  <h1>Boutique</h1>
+  {%- if collections.boutique.length %}
+  <ul class="card-list">
+    {%- for product in collections.boutique %}
+    <li class="card card--product">
+      {%- if product.data.photo %}
+      <img class="card__photo card__photo--product" src="{{ product.data.photo }}" alt="{{ product.data.title }}">
+      {%- endif %}
+      <h3>{{ product.data.title }}</h3>
+      {%- if product.data.price %}
+      <p class="card__price">{{ product.data.price }}</p>
+      {%- endif %}
+      {%- if product.data.description %}
+      <p>{{ product.data.description }}</p>
+      {%- endif %}
+      {%- if product.data.paymentLink %}
+      <p><a class="btn btn--primary" href="{{ product.data.paymentLink }}">Acheter</a></p>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p>Aucun produit pour le moment.</p>
+  {%- endif %}
+</article>
