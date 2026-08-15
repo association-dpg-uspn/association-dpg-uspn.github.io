@@ -73,7 +73,8 @@ content:
       - name: category
         label: "Catégorie"
         type: select
-        options: ["Cours", "Fiches", "Annales", "Autre"]
+        options:
+          values: ["Cours", "Fiches", "Annales", "Autre"]
       - { name: description, label: "Description", type: text, required: false }
       - { name: file, label: "Fichier", type: file, media: documents }
 
