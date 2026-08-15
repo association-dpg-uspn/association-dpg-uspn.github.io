@@ -10,14 +10,14 @@ content:
   - name: home
     label: "Accueil"
     type: file
-    path: src/index.njk
+    path: src/home/index.njk
     fields:
       - { name: title, label: "Titre (onglet navigateur)", type: string }
 
   - name: presentation
     label: "Présentation"
     type: file
-    path: src/presentation.md
+    path: src/presentation/index.md
     fields:
       - { name: title, label: "Titre", type: string }
       - { name: showBureau, label: "Afficher le bureau", type: boolean, default: true }
@@ -26,7 +26,7 @@ content:
   - name: partenariats
     label: "Partenariats"
     type: file
-    path: src/partenariats.md
+    path: src/partenariats/index.md
     fields:
       - { name: title, label: "Titre", type: string }
       - { name: showPartners, label: "Afficher les partenaires", type: boolean, default: true }
@@ -35,7 +35,7 @@ content:
   - name: contact
     label: "Contact / Adhésion"
     type: file
-    path: src/contact.md
+    path: src/contact/index.md
     fields:
       - { name: title, label: "Titre", type: string }
       - { name: instagram, label: "Lien Instagram", type: string, required: false }
