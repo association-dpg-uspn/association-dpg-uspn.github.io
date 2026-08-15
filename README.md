@@ -1,6 +1,6 @@
 # Association DPG USPN
 
-Site web de l'association des étudiants du Master 2 Droit Privé Général (USPN).
+Site web de l'association des étudiants du Master Droit Privé Général (USPN).
 
 ## Stack
 
