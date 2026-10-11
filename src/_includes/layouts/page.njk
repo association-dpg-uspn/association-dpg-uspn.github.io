@@ -33,7 +33,7 @@ layout: layouts/base.njk
     {%- for member in collections.bureau %}
     <li class="card card--member">
       {%- if member.data.photo %}
-      <img class="card__photo" src="{{ member.data.photo }}" alt="{{ member.data.name }}">
+      <img class="card__photo" src="{{ member.data.photo }}" alt="{{ member.data.name }}" sizes="5rem">
       {%- endif %}
       <h3>{{ member.data.name }}</h3>
       <p class="card__meta">{{ member.data.role }}</p>
@@ -50,7 +50,7 @@ layout: layouts/base.njk
     {%- for partner in collections.partners %}
     <li class="card card--partner">
       {%- if partner.data.logo %}
-      <img class="card__logo" src="{{ partner.data.logo }}" alt="{{ partner.data.name }}">
+      <img class="card__logo" src="{{ partner.data.logo }}" alt="{{ partner.data.name }}" sizes="10rem">
       {%- endif %}
       {%- if partner.data.link %}
       <h3><a href="{{ partner.data.link }}">{{ partner.data.name }}</a></h3>

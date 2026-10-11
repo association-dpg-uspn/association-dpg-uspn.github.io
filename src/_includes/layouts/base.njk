@@ -3,9 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }} — {{ site.title }}</title>
-  <meta name="description" content="{{ description or site.tagline }}">
-  <link rel="icon" href="/assets/images/logo.jpg">
+  {%- set pageTitle = title + " — " + site.title %}
+  {%- set pageDescription = description or site.tagline %}
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/images/logo.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
@@ -15,12 +25,12 @@
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="brand" href="/">
-        <img class="brand__logo" src="/assets/images/logo.jpg" alt="{{ site.associationName }}">
+        <img class="brand__logo" src="/assets/images/logo.jpg" alt="" loading="eager" sizes="2.5rem">
         <span class="brand__name">{{ site.associationName }}</span>
       </a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle__label" aria-label="Ouvrir le menu">☰</label>
-      <nav class="site-nav">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu" aria-controls="site-nav">
+      <label for="nav-toggle" class="nav-toggle__label" aria-hidden="true">☰</label>
+      <nav class="site-nav" id="site-nav">
         <ul>
           {%- for item in site.nav %}
           <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
@@ -38,6 +48,7 @@
     <div class="wrap site-footer__inner">
       <p>{{ site.associationName }}</p>
       <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p><a href="/mentions-legales/">Mentions légales</a></p>
     </div>
   </footer>
 </body>

@@ -13,26 +13,22 @@ layout: layouts/base.njk
     </div>
   </div>
   <div class="hero__seal">
-    <img src="/assets/images/logo.jpg" alt="{{ site.associationName }}">
+    <img src="/assets/images/logo.jpg" alt="{{ site.associationName }}" loading="eager" sizes="12rem">
   </div>
 </section>
 
 <section class="section">
   {{ m.chapterMark("Prochainement") }}
-  {%- if collections.events.length %}
+  {%- if collections.upcomingEvents.length %}
   <ul class="card-list">
-    {%- for event in collections.events %}
+    {%- for event in collections.upcomingEvents %}
     {%- if loop.index <= 3 %}
-    <li class="card">
-      <p class="card__meta">{{ event.data.date | dateFr }}</p>
-      <h3>{{ event.data.title }}</h3>
-      <p>{{ event.data.description }}</p>
-    </li>
+    {{ m.eventCard(event) }}
     {%- endif %}
     {%- endfor %}
   </ul>
-  <p><a href="/evenements/">Voir tous les événements →</a></p>
   {%- else %}
-  <p>Aucun événement pour le moment.</p>
+  <p>Aucun événement à venir pour le moment.</p>
   {%- endif %}
+  <p><a href="/evenements/">Voir tous les événements →</a></p>
 </section>

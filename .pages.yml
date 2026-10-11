@@ -7,6 +7,25 @@ media:
     output: /assets/documents
 
 content:
+  - name: site
+    label: "Paramètres du site"
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - { name: title, label: "Nom du site (onglet navigateur)", type: string }
+      - { name: url, label: "Adresse du site (ne pas modifier)", type: string }
+      - { name: tagline, label: "Phrase d'accroche (accueil)", type: string }
+      - { name: associationName, label: "Nom de l'association", type: string }
+      - { name: email, label: "Email de contact (pied de page)", type: string }
+      - name: nav
+        label: "Menu de navigation"
+        type: object
+        list: true
+        fields:
+          - { name: label, label: "Libellé", type: string }
+          - { name: url, label: "Lien", type: string }
+
   - name: home
     label: "Accueil"
     type: file
@@ -40,6 +59,14 @@ content:
       - { name: title, label: "Titre", type: string }
       - { name: instagram, label: "Lien Instagram", type: string, required: false }
       - { name: linkedin, label: "Lien LinkedIn", type: string, required: false }
+      - { name: body, label: "Texte", type: rich-text }
+
+  - name: mentions-legales
+    label: "Mentions légales"
+    type: file
+    path: src/mentions-legales/index.md
+    fields:
+      - { name: title, label: "Titre", type: string }
       - { name: body, label: "Texte", type: rich-text }
 
   - name: events
